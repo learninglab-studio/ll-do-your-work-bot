@@ -30,7 +30,7 @@ module.exports = async ({ event, client, logger }) => {
                 "type": "section",
                 "text": {
                   "type": "mrkdwn",
-                  "text": `looked for ${event.user}\n\`\`\`${JSON.stringify(personResult.fields, null, 4)}\`\`\``
+                  "text": `looked for ${event.user}\n\`\`\`${JSON.stringify(personResult.fields, null, 4).substring(0, 1000)}\`\`\``
                 }
               }
             ]
