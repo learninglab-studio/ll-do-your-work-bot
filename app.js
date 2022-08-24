@@ -1,7 +1,7 @@
 const { App } = require('@slack/bolt');
 const airtableTools = require(`./src/utilities/airtable-tools`);
 const { blue, darkgray, gray, magenta, yellow, divider, red } = require('./src/utilities/mk-loggers')
-const { appHome, projectProposal, projectHackMd, newActionView, handleActionViewSubmission } = require(`./src/show-tools`)
+const { appHome, projectProposal, projectHackMd, newActionView, handleActionViewSubmission, newLaunchView } = require(`./src/show-tools`)
 const mw = require('./src/utilities/slack-middleware')
 const handleMessage = require('./src/show-tools/handle-message')
 const handleReaction = require('./src/show-tools/handle-reaction')
@@ -44,6 +44,7 @@ app.action(/.*/, async ({ payload, context, body, ack }) => {
 app.command("/projectproposal", projectProposal);
 app.command("/projecthackmd", projectHackMd);
 app.command("/action", newActionView);
+app.command("/launch", newLaunchView);
 
 (async () => {
   // Start your app
